@@ -20,6 +20,8 @@ if [ "$RUN_BACKGROUND" == 1 ]; then
     --pruning=nothing                     \
     --grpc.address="0.0.0.0:$GRPCPORT"    \
     --grpc-web.address="0.0.0.0:$GRPCWEB" \
+    --api.enabled-unsafe-cors             \
+    --rpc.unsafe  \
     --trace > "$CHAIN_DIR/$CHAINID.log" 2>&1 &
 else
   $BINARY start                           \
@@ -29,6 +31,8 @@ else
     --pruning=nothing                     \
     --grpc.address="0.0.0.0:$GRPCPORT"    \
     --grpc-web.address="0.0.0.0:$GRPCWEB" \
+    --rpc.unsafe  \
+    --api.enabled-unsafe-cors \
     --trace 2>&1 | tee "$CHAIN_DIR/$CHAINID.log"
 fi
 

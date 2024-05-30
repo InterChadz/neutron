@@ -235,7 +235,7 @@ func (suite *UpgradeTestSuite) TestRegisterInterchainAccountCreationFee() {
 	codeID := suite.StoreTestCode(ctx, sdk.AccAddress("neutron1_ica"), "testdata/neutron_interchain_txs.wasm")
 	contractAddressAfterUpgrade := suite.InstantiateTestContract(ctx, sdk.AccAddress("neutron1_ica"), codeID)
 	// register w/o actual fees
-	jsonStringBeforeUpgrade := `{"register": {"connection_id":"connection-1","interchain_account_id":"test-2"}}`
+	jsonStringBeforeUpgrade := `{"register": {"connection_id":"connection-1","interchain_account_id":"testy-2"}}`
 	byteEncodedMsgBeforeUpgrade := []byte(jsonStringBeforeUpgrade)
 	_, err := contractKeeper.Execute(ctx, contractAddressBeforeUpgrade, sdk.AccAddress("neutron1_ica"), byteEncodedMsgBeforeUpgrade, nil)
 	suite.Require().NoError(err)

@@ -18,7 +18,7 @@ export STAKEDENOM=untrn
 "$script_full_path"/start.sh
 
 export BINARY=gaiad
-export CHAINID=test-2
+export CHAINID=testy-2
 export P2PPORT=16656
 export RPCPORT=16657
 export RESTPORT=1316

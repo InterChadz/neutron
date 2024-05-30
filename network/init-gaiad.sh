@@ -12,4 +12,4 @@ echo "Creating and collecting gentx..."
 $BINARY genesis gentx val1 "7000000000$STAKEDENOM" --home "$CHAIN_DIR" --chain-id "$CHAINID" --keyring-backend test
 $BINARY genesis collect-gentxs --home "$CHAIN_DIR"
 
-sed -i -e 's/\*/\/cosmos.bank.v1beta1.MsgSend\", \"\/cosmos.staking.v1beta1.MsgDelegate\", \"\/cosmos.staking.v1beta1.MsgUndelegate/g' "$CHAIN_DIR/config/genesis.json"
+sed -i -e 's/\*/\/cosmos.bank.v1beta1.MsgSend\", \"\/cosmos.staking.v1beta1.MsgDelegate\", \"\/cosmos.authz.v1beta1.MsgExec\", \"\/cosmos.staking.v1beta1.MsgUndelegate/g' "$CHAIN_DIR/config/genesis.json"
